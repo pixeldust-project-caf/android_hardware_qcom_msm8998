@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+ifneq ($(PRODUCT_PLATFORM_SOD),true)
 
 LOCAL_PATH := $(call my-dir)
 
@@ -20,3 +21,4 @@ ifeq ($(TARGET_BOARD_PLATFORM),msm8998)
   subdir_makefiles=$(call first-makefiles-under,$(LOCAL_PATH))
   $(foreach mk,$(subdir_makefiles),$(info including $(mk) ...)$(eval include $(mk)))
 endif
+endif #PRODUCT_PLATFORM_SOD
